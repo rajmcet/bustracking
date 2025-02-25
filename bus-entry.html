@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Entry System</title>
+</head>
+<body>
+    <h1>✅ Entry Confirmed</h1>
+
+    <script>
+        // ✅ Reduce Seat Count when Scanned
+        document.addEventListener("DOMContentLoaded", function () {
+            let seatsLeft = parseInt(localStorage.getItem("seatsLeft")) || 40;
+
+            if (seatsLeft > 0) {
+                seatsLeft--;
+                localStorage.setItem("seatsLeft", seatsLeft);
+                alert(`🚍 Passenger Entered! Seats Left: ${seatsLeft}`);
+            } else {
+                alert("🚫 No More Seats Available!");
+            }
+        });
+    </script>
+</body>
+</html>
